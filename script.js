@@ -1,6 +1,6 @@
 window.onload = function () {
 
-    const imagens = document.querySelectorAll(".cover");
+    const imagens = document.querySelectorAll(".cover, .social-post");
 
     const lightbox = document.getElementById("lightbox");
     const lightboxImg = document.getElementById("lightbox-img");
@@ -113,6 +113,54 @@ window.onload = function () {
 
     });
 
+
+    const audiovisualCards = document.querySelectorAll(".audiovisual-card");
+    const videoLightbox = document.getElementById("video-lightbox");
+    const videoLightboxFrame = document.getElementById("video-lightbox-frame");
+    const videoLightboxClose = document.querySelector(".video-lightbox-close");
+
+    function closeVideoLightbox(){
+
+        videoLightbox.classList.remove("active");
+        videoLightbox.setAttribute("aria-hidden", "true");
+        videoLightboxFrame.src = "";
+
+    }
+
+    audiovisualCards.forEach((card)=>{
+
+        card.addEventListener("click",(e)=>{
+
+            e.preventDefault();
+            videoLightboxFrame.src = "https://www.youtube.com/embed/" + card.dataset.videoId + "?autoplay=1";
+            videoLightbox.classList.add("active");
+            videoLightbox.setAttribute("aria-hidden", "false");
+
+        });
+
+    });
+
+    videoLightboxClose.addEventListener("click", closeVideoLightbox);
+
+    videoLightbox.addEventListener("click",(e)=>{
+
+        if(e.target === videoLightbox){
+
+            closeVideoLightbox();
+
+        }
+
+    });
+
+    document.addEventListener("keydown",(e)=>{
+
+        if(e.key === "Escape" && videoLightbox.classList.contains("active")){
+
+            closeVideoLightbox();
+
+        }
+
+    });
 };
 // Motion Preview
 

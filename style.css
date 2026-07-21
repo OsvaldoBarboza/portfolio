@@ -42,7 +42,7 @@ margin:auto;
 
 .section{
 
-padding:120px 0;
+padding:60px 0;
 
 }
 
@@ -116,7 +116,33 @@ align-items:center;
 
 .hero-content{
 
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:70px;
+
+}
+
+.hero-text{
+
 max-width:900px;
+
+}
+
+.hero-photo{
+
+flex:0 0 min(31vw,410px);
+
+}
+
+.hero-photo img{
+
+width:100%;
+aspect-ratio:1/1;
+object-fit:cover;
+border-radius:50%;
+border:1px solid #333;
+box-shadow:0 24px 60px rgba(0,0,0,.38);
 
 }
 
@@ -420,33 +446,212 @@ font-size:18px;
 
 }
 
-/* SOCIAL */
+/* ===========================
+PRODUÇÕES AUDIOVISUAIS
+=========================== */
 
-.social-grid{
+.audiovisual-heading{
 
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:25px;
+margin-bottom:50px;
 
 }
 
-.placeholder{
+.audiovisual-heading h2{
 
-height:420px;
+margin-bottom:16px;
+
+}
+
+.audiovisual-heading p,
+.audiovisual-note{
+
+color:#bdbdbd;
+
+}
+
+.audiovisual-grid{
+
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:24px;
+
+}
+
+.audiovisual-card{
+
+overflow:hidden;
+border:1px solid #282828;
 border-radius:18px;
 background:#181818;
+transition:transform .35s ease, border-color .35s ease;
+
+}
+
+.audiovisual-card:hover{
+
+transform:translateY(-8px);
+border-color:#4a4a4a;
+
+}
+
+.audiovisual-thumbnail{
+
+position:relative;
+aspect-ratio:16/9;
+overflow:hidden;
+background:#111;
+
+}
+
+.audiovisual-thumbnail img{
+
+width:100%;
+height:100%;
+object-fit:cover;
+transition:transform .35s ease;
+
+}
+
+.audiovisual-card:hover .audiovisual-thumbnail img{
+
+transform:scale(1.04);
+
+}
+
+.audiovisual-play{
+
+position:absolute;
+top:50%;
+left:50%;
+width:56px;
+height:56px;
+display:grid;
+place-items:center;
+border:1px solid rgba(255,255,255,.45);
+border-radius:50%;
+background:rgba(10,10,11,.72);
+transform:translate(-50%,-50%);
+transition:background .25s ease, transform .25s ease;
+
+}
+
+.audiovisual-card:hover .audiovisual-play{
+
+background:#fff;
+transform:translate(-50%,-50%) scale(1.08);
+
+}
+
+.audiovisual-play svg{
+
+width:24px;
+height:24px;
+fill:#fff;
+
+}
+
+.audiovisual-card:hover .audiovisual-play svg{
+
+fill:#111;
+
+}
+
+.audiovisual-card h3{
+
+padding:20px;
+font-size:18px;
+line-height:1.35;
+
+}
+
+.audiovisual-note{
+
+max-width:820px;
+margin-top:42px;
+font-size:17px;
+
+}
+/* ===========================
+SOCIAL MEDIA
+=========================== */
+
+.social-client{
+
+display:grid;
+grid-template-columns:180px 1fr;
+gap:50px;
+align-items:center;
+margin-bottom:90px;
+
+}
+
+.social-client:last-child{
+
+margin-bottom:0;
+
+}
+
+.social-logo{
+
 display:flex;
 justify-content:center;
 align-items:center;
-font-size:20px;
-font-weight:600;
-transition:.3s;
 
 }
 
-.placeholder:hover{
+.social-logo img{
 
-transform:translateY(-8px);
+width:150px;
+height:auto;
+
+}
+
+.social-posts{
+
+display:grid;
+grid-template-columns:repeat(6,minmax(0,1fr));
+gap:18px;
+
+}
+
+.social-post-card{
+
+position:relative;
+min-width:0;
+
+}
+
+.social-post{
+
+width:100%;
+aspect-ratio:4/5;
+object-fit:cover;
+border-radius:14px;
+cursor:pointer;
+box-shadow:0 15px 35px rgba(0,0,0,.35);
+transition:.35s;
+
+}
+
+.social-post:hover{
+
+transform:translateY(-10px) scale(1.03);
+
+}
+
+.social-post-year{
+
+position:absolute;
+top:10px;
+left:10px;
+padding:5px 8px;
+border-radius:8px;
+background:rgba(0,0,0,.68);
+color:#fff;
+font-size:12px;
+font-weight:700;
+line-height:1;
+pointer-events:none;
 
 }
 /* ===========================
@@ -551,95 +756,285 @@ width:auto;
 }
 
 /* ===========================
-TIMELINE
+TRAJETÓRIA PROFISSIONAL
 =========================== */
 
-.timeline{
+.journey-heading{
+
+max-width:900px;
+margin-bottom:60px;
+
+}
+
+.journey-heading h2{
+
+margin-bottom:20px;
+
+}
+
+.journey-heading p,
+.journey-card p,
+.journey-linkedin p{
+
+color:#bdbdbd;
+
+}
+
+.journey-grid{
 
 display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:30px;
+grid-template-columns:repeat(3,1fr);
+gap:24px;
 
 }
 
-.timeline-item{
+.journey-card{
 
+min-height:330px;
 padding:30px;
-background:#181818;
+border:1px solid #282828;
 border-radius:18px;
-transition:.3s;
+background:#181818;
+display:flex;
+flex-direction:column;
+transition:transform .3s ease, border-color .3s ease;
 
 }
 
-.timeline-item:hover{
+.journey-card:hover{
 
 transform:translateY(-6px);
+border-color:#4a4a4a;
 
 }
 
-.timeline-item span{
+.journey-icon{
 
-display:block;
+width:44px;
+height:44px;
+display:grid;
+place-items:center;
+margin-bottom:24px;
+border:1px solid #3a3a3a;
+border-radius:12px;
+color:#fff;
+
+}
+
+.journey-icon svg{
+
+width:21px;
+height:21px;
+fill:none;
+stroke:currentColor;
+stroke-width:1.7;
+stroke-linecap:round;
+stroke-linejoin:round;
+
+}
+
+.journey-card h3,
+.journey-linkedin h3{
+
+font-size:22px;
+line-height:1.25;
+margin-bottom:14px;
+
+}
+
+.journey-card p{
+
+font-size:15px;
+margin-bottom:24px;
+
+}
+
+.journey-label{
+
+margin-top:auto;
+margin-bottom:7px;
+font-size:12px;
+font-weight:700;
+letter-spacing:.08em;
+text-transform:uppercase;
+color:#777;
+
+}
+
+.journey-detail{
+
+font-size:14px;
+line-height:1.5;
+color:#e0e0e0;
+
+}
+
+.journey-gallery{
+
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:16px;
+margin-top:80px;
+
+}
+
+.journey-gallery-item{
+
+min-width:0;
+
+}
+
+.journey-gallery-photo{
+
+aspect-ratio:4/3;
+overflow:hidden;
+border:1px solid #292929;
+border-radius:14px;
+background:#181818;
+transition:transform .3s ease, border-color .3s ease;
+
+}
+
+.journey-gallery-photo img{
+
+width:100%;
+height:100%;
+object-fit:cover;
+transition:transform .3s ease;
+
+}
+
+.journey-gallery-item:hover .journey-gallery-photo{
+
+transform:translateY(-5px);
+border-color:#4a4a4a;
+
+}
+
+.journey-gallery-item:hover .journey-gallery-photo img{
+
+transform:scale(1.04);
+
+}
+
+.journey-gallery-item h3{
+
+margin:14px 0 2px;
+font-size:16px;
+line-height:1.3;
+
+}
+
+.journey-gallery-item span{
+
 font-size:14px;
 color:#888;
-margin-bottom:12px;
 
 }
 
-.timeline-item h3{
+.journey-linkedin{
 
-margin-bottom:10px;
-font-size:24px;
-
-}
-
-.timeline-item p{
-
-color:#bbb;
+max-width:680px;
+margin-top:100px;
+padding-top:50px;
+border-top:1px solid #292929;
 
 }
 
+.journey-linkedin p{
+
+margin-bottom:28px;
+
+}
+
+.journey-linkedin .btn{
+
+gap:10px;
+
+}
 /* ===========================
 BEHANCE
 =========================== */
 
 .behance-layout{
-
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:70px;
 align-items:center;
-
 }
 
 .behance-text p{
-
 margin:20px 0;
 color:#bdbdbd;
-
 }
 
 .behance-grid{
-
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:15px;
-
 }
 
-.behance-grid div{
-
-aspect-ratio:1;
+.behance-placeholder{
+aspect-ratio:1/1;
 background:#1a1a1a;
 border-radius:14px;
 transition:.3s;
-
 }
 
-.behance-grid div:hover{
-
+.behance-placeholder:hover{
 transform:scale(1.04);
+}
 
+.behance-item{
+position:relative;
+display:block;
+overflow:hidden;
+aspect-ratio:1/1;
+border-radius:14px;
+}
+
+.behance-item img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+transition:.35s;
+}
+
+.behance-hover{
+position:absolute;
+inset:0;
+display:flex;
+justify-content:center;
+align-items:center;
+background:rgba(0,0,0,.72);
+backdrop-filter:blur(2px);
+opacity:0;
+transition:.35s;
+}
+
+.behance-hover span{
+color:#fff;
+font-size:18px;
+font-weight:700;
+letter-spacing:.06em;
+transform:translateY(10px);
+opacity:0;
+transition:.35s;
+}
+
+.behance-item:hover img{
+transform:scale(1.05);
+filter:brightness(.35);
+}
+
+.behance-item:hover .behance-hover{
+opacity:1;
+}
+
+.behance-item:hover .behance-hover span{
+transform:translateY(0);
+opacity:1;
 }
 
 /* ===========================
@@ -721,13 +1116,101 @@ transform:translateY(-50%);
 }
 
 /* ===========================
+VÍDEO LIGHTBOX
+=========================== */
+
+.video-lightbox{
+
+position:fixed;
+inset:0;
+z-index:9999;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:40px;
+background:rgba(0,0,0,.93);
+opacity:0;
+visibility:hidden;
+pointer-events:none;
+transition:opacity .25s ease, visibility .25s ease;
+
+}
+
+.video-lightbox.active{
+
+opacity:1;
+visibility:visible;
+pointer-events:auto;
+
+}
+
+.video-modal-content{
+
+position:relative;
+width:min(1100px,100%);
+aspect-ratio:16/9;
+background:#000;
+border-radius:18px;
+overflow:hidden;
+transform:scale(.96);
+transition:transform .25s ease;
+box-shadow:0 24px 70px rgba(0,0,0,.5);
+
+}
+
+.video-lightbox.active .video-modal-content{
+
+transform:scale(1);
+
+}
+
+.video-modal-content iframe{
+
+width:100%;
+height:100%;
+border:0;
+
+}
+
+.video-lightbox-close{
+
+position:absolute;
+top:12px;
+right:12px;
+z-index:1;
+width:40px;
+height:40px;
+border:1px solid rgba(255,255,255,.25);
+border-radius:50%;
+background:rgba(10,10,11,.72);
+color:#fff;
+font-size:30px;
+line-height:1;
+cursor:pointer;
+transition:background .2s ease, color .2s ease;
+
+}
+
+.video-lightbox-close:hover,
+.video-lightbox-close:focus-visible{
+
+background:#fff;
+color:#111;
+outline:none;
+
+}
+/* ===========================
 RESPONSIVO
 =========================== */
 
 @media(max-width:1100px){
 
-.motion-grid,
-.social-grid{
+.audiovisual-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+.motion-grid{
 
 grid-template-columns:repeat(2,1fr);
 
@@ -747,13 +1230,30 @@ grid-template-columns:1fr;
 
 }
 
-.timeline{
+.journey-grid{
 
-grid-template-columns:1fr;
+grid-template-columns:repeat(2,1fr);
 
 }
 
-.editorial-group{
+.journey-gallery{
+
+grid-template-columns:repeat(3,1fr);
+
+}
+
+.social-client{
+
+grid-template-columns:150px 1fr;
+gap:30px;
+
+}
+
+.social-posts{
+
+gap:12px;
+
+}.editorial-group{
 
 grid-template-columns:1fr;
 gap:30px;
@@ -772,10 +1272,54 @@ font-size:54px;
 
 }
 
+.hero-content{
+
+gap:40px;
+
+}
+
+.hero-photo{
+
+flex-basis:min(32vw,330px);
+
+}
+
 }
 
 @media(max-width:700px){
 
+.video-lightbox{
+
+padding:20px;
+
+}
+
+.video-modal-content{
+
+border-radius:12px;
+
+}
+
+.video-lightbox-close{
+
+top:8px;
+right:8px;
+width:36px;
+height:36px;
+font-size:27px;
+
+}
+.audiovisual-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.audiovisual-heading{
+
+margin-bottom:36px;
+
+}
 .container{
 
 width:calc(100% - 40px);
@@ -800,8 +1344,66 @@ font-size:18px;
 
 }
 
-.motion-grid,
-.social-grid{
+.hero-content{
+
+flex-direction:column;
+align-items:flex-start;
+
+}
+
+.hero-photo{
+
+width:min(70vw,300px);
+flex-basis:auto;
+order:-1;
+
+}
+
+.social-client{
+
+grid-template-columns:1fr;
+gap:28px;
+margin-bottom:60px;
+
+}
+
+.social-logo{
+
+justify-content:center;
+
+}
+
+.social-posts{
+
+grid-template-columns:repeat(3,1fr);
+gap:12px;
+
+}
+.journey-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.journey-card{
+
+min-height:auto;
+
+}
+
+.journey-gallery{
+
+grid-template-columns:repeat(2,1fr);
+margin-top:60px;
+
+}
+
+.journey-linkedin{
+
+margin-top:80px;
+
+}
+.motion-grid{
 
 grid-template-columns:1fr;
 
@@ -809,7 +1411,7 @@ grid-template-columns:1fr;
 
 .section{
 
-padding:80px 0;
+padding:60px 0;
 
 }
 
@@ -819,4 +1421,7 @@ font-size:34px;
 
 }
 
+}
+.behance-section{
+    padding-top:0px;
 }
